@@ -5,7 +5,7 @@
             <div class="inline-flex items-center space-x-2">
                 <button type="button">
                     <svg xmlns="http://www.w3.org/2000/svg"
-                        class="icon icon-tabler icon-tabler-bell-filled  h-6 w-6 text-golden-100 hover:text-golden-300"
+                        class="icon icon-tabler icon-tabler-bell-filled  h-6 w-6 text-primary-100 hover:text-primary-300"
                         width="40" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none"
                         stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -20,7 +20,7 @@
                 <button type="button">
 
                     <svg xmlns="http://www.w3.org/2000/svg"
-                        class="icon icon-tabler icon-tabler-settings-filled  h-6 w-6 text-golden-100 hover:text-golden-300"
+                        class="icon icon-tabler icon-tabler-settings-filled  h-6 w-6 text-primary-100 hover:text-primary-300"
                         width="40" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none"
                         stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -36,7 +36,7 @@
 
 <style lang="scss" scoped>
 .header-marvel {
-    @apply w-full h-24 absolute top-0 left-0 z-20 bg-transparent border-b border-golden-600 border-opacity-50;
+    @apply w-full h-24 absolute top-0 left-0 z-20 bg-transparent border-b border-primary-600 border-opacity-50;
     @apply inline-flex;
 
     &--content {

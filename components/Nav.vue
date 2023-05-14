@@ -1,6 +1,6 @@
 <template>
     <nav class="nav-marvel">
-        <p class="text-golden-100 text-2xl hidden md:block">
+        <p class="text-primary-100 text-2xl hidden md:block">
             LOGO MARVEL
         </p>
         <ul>
@@ -25,10 +25,10 @@
             @apply w-28 flex;
 
             a {
-                @apply relative w-full h-full flex items-center justify-center text-golden-100 uppercase font-medium text-sm;
-                @apply hover:text-golden-300;
+                @apply relative w-full h-full flex items-center justify-center text-primary-100 uppercase font-medium text-sm;
+                @apply hover:text-primary-300;
                 &.router-link-exact-active {
-                    @apply bg-gradient-to-t from-golden-500/40 to-transparent text-golden-300;
+                    @apply bg-gradient-to-t from-primary-500/40 to-transparent text-primary-300;
                     &::after{
                         @apply absolute content-['']  z-10 h-[19px] top-0 left-0 right-0 w-full;
                         background-image: url('~/assets/images/current-page.png');
