@@ -18,7 +18,8 @@ export const theme = {
         500: '#463714',
         600: '#32281E',
       },
-      grey: colors.zinc
+      grey:'#111111'
+      // grey: colors.zinc
     },
     fontFamily: {
       sans: ['Beaufort for LOL Font', 'sans-serif'],

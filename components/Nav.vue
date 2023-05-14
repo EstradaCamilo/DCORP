@@ -1,14 +1,14 @@
 <template>
     <nav class="nav-marvel">
-        <p class="text-white text-xl hidden md:block">
-            LOGO DE MARVEL
+        <p class="text-golden-100 text-2xl hidden md:block">
+            LOGO MARVEL
         </p>
         <ul>
             <li>
                 <NuxtLink to="/">Inicio</NuxtLink>
             </li>
             <li>
-                <NuxtLink to="/personajes">Personajes</NuxtLink>
+                <NuxtLink to="/characters">Personajes</NuxtLink>
             </li>
         </ul>
 
@@ -25,7 +25,7 @@
             @apply w-28 flex;
 
             a {
-                @apply relative w-full h-full flex items-center justify-center text-grey-300 uppercase font-medium text-sm;
+                @apply relative w-full h-full flex items-center justify-center text-golden-100 uppercase font-medium text-sm;
                 @apply hover:text-golden-300;
                 &.router-link-exact-active {
                     @apply bg-gradient-to-t from-golden-500/40 to-transparent text-golden-300;

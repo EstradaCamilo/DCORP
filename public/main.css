@@ -740,12 +740,12 @@ select {
   left: 0px;
 }
 
-.top-0 {
-  top: 0px;
-}
-
 .right-0 {
   right: 0px;
+}
+
+.top-0 {
+  top: 0px;
 }
 
 .z-10 {
@@ -781,36 +781,20 @@ select {
   height: 6rem;
 }
 
-.h-full {
-  height: 100%;
-}
-
-.h-10 {
-  height: 2.5rem;
-}
-
-.h-5 {
-  height: 1.25rem;
-}
-
-.h-4 {
-  height: 1rem;
+.h-7 {
+  height: 1.75rem;
 }
 
 .h-\[19px\] {
   height: 19px;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .h-6 {
   height: 1.5rem;
-}
-
-.h-8 {
-  height: 2rem;
-}
-
-.h-7 {
-  height: 1.75rem;
 }
 
 .min-h-screen {
@@ -821,24 +805,16 @@ select {
   width: 7rem;
 }
 
+.w-7 {
+  width: 1.75rem;
+}
+
 .w-full {
   width: 100%;
 }
 
-.w-8 {
-  width: 2rem;
-}
-
-.w-5 {
-  width: 1.25rem;
-}
-
 .w-6 {
   width: 1.5rem;
-}
-
-.w-7 {
-  width: 1.75rem;
 }
 
 .max-w-7xl {
@@ -857,16 +833,24 @@ select {
   justify-content: space-between;
 }
 
-.space-x-4 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1rem * var(--tw-space-x-reverse));
-  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+.gap-4 {
+  gap: 1rem;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.border {
+  border-width: 1px;
 }
 
 .border-b {
@@ -878,13 +862,22 @@ select {
   border-color: rgb(50 40 30 / var(--tw-border-opacity));
 }
 
-.bg-transparent {
-  background-color: transparent;
+.border-opacity-30 {
+  --tw-border-opacity: 0.3;
 }
 
-.bg-white {
+.bg-golden-400 {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  background-color: rgb(66 51 26 / var(--tw-bg-opacity));
+}
+
+.bg-grey {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 17 17 / var(--tw-bg-opacity));
+}
+
+.bg-transparent {
+  background-color: transparent;
 }
 
 .bg-gradient-to-t {
@@ -913,6 +906,10 @@ select {
   background-repeat: no-repeat;
 }
 
+.p-4 {
+  padding: 1rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -923,9 +920,17 @@ select {
   padding-right: 1.5rem;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+.pt-28 {
+  padding-top: 7rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .font-medium {
@@ -936,78 +941,18 @@ select {
   text-transform: uppercase;
 }
 
-.text-gray-200 {
+.text-golden-100 {
   --tw-text-opacity: 1;
-  color: rgb(229 231 235 / var(--tw-text-opacity));
-}
-
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-grey-200 {
-  --tw-text-opacity: 1;
-  color: rgb(228 228 231 / var(--tw-text-opacity));
-}
-
-.text-grey-600 {
-  --tw-text-opacity: 1;
-  color: rgb(82 82 91 / var(--tw-text-opacity));
-}
-
-.text-grey-500 {
-  --tw-text-opacity: 1;
-  color: rgb(113 113 122 / var(--tw-text-opacity));
-}
-
-.text-grey-300 {
-  --tw-text-opacity: 1;
-  color: rgb(212 212 216 / var(--tw-text-opacity));
+  color: rgb(240 230 210 / var(--tw-text-opacity));
 }
 
 .mix-blend-multiply {
   mix-blend-mode: multiply;
 }
 
-.content-\[\'-\'\] {
-  --tw-content: '-';
-  content: var(--tw-content);
-}
-
 .content-\[\'\'\] {
   --tw-content: '';
   content: var(--tw-content);
-}
-
-.after\:content-\[\'_\2197\'\]::after {
-  --tw-content: ' ↗';
-  content: var(--tw-content);
-}
-
-.after\:content-\[\'\'\]::after {
-  --tw-content: '';
-  content: var(--tw-content);
-}
-
-.after\:content-\[\'-\'\]::after {
-  --tw-content: '-';
-  content: var(--tw-content);
-}
-
-.hover\:bg-gradient-to-t:hover {
-  background-image: linear-gradient(to top, var(--tw-gradient-stops));
-}
-
-.hover\:from-golden-500\/40:hover {
-  --tw-gradient-from: rgb(70 55 20 / 0.4) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(70 55 20 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.hover\:text-grey-300:hover {
-  --tw-text-opacity: 1;
-  color: rgb(212 212 216 / var(--tw-text-opacity));
 }
 
 .hover\:text-golden-300:hover {
@@ -1023,6 +968,14 @@ select {
 }
 
 @media (min-width: 768px) {
+  .md\:col-span-3 {
+    grid-column: span 3 / span 3;
+  }
+
+  .md\:col-span-4 {
+    grid-column: span 4 / span 4;
+  }
+
   .md\:block {
     display: block;
   }

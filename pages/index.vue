@@ -1,7 +1,5 @@
 <template>
-    <NuxtLayout name="marvel">
-        <div>
-            index
-        </div>
-    </NuxtLayout>
+    <div>
+        index
+    </div>
 </template>

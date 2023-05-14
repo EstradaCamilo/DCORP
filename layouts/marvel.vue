@@ -7,11 +7,11 @@
     
 <style  lang="scss" scoped>
 .layout-marvel {
-    @apply grid min-h-screen w-full bg-cover bg-bottom relative pt-24;
+    @apply grid min-h-screen w-full bg-cover bg-bottom relative pt-28 mx-auto  max-w-7xl px-4 sm:px-6 lg:px-8;
     background-image: url('~/assets/images/bg.png');
 
     &::after {
-        @apply absolute top-0 left-0 z-10 h-full w-full mix-blend-multiply content-[''];
+        @apply absolute top-0 left-0 h-full w-full mix-blend-multiply content-[''];
         background: radial-gradient(82.53% 82.53% at 50% 91.99%, #19488F 44.09%, #000000 100%);
     }
 }
