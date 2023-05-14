@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   css: [
     "~/assets/scss/tailwind.scss",
     "~/public/main.css", // Regular
-   
   ],
   postcss: {
     plugins: {
@@ -19,6 +18,12 @@ export default defineNuxtConfig({
       preprocessorOptions: {
         scss: {},
       },
+    },
+  },
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: process.env.API_BASE_URL ?? "",
+      apiBase: process.env.API_KEY ?? "",
     },
   },
 });
