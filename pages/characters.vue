@@ -1,27 +1,49 @@
 <template>
     <div class="page-characters">
-        <div class="page-characters--details">
-            <div class="md:col-span-4">
-                <Progress :total="688" :current="400" />
+        <div class="page-characters--info">
+            <div class="md:col-span-5 h-[182px]">
+                <Progress class="h-full" :total="688" :current="400" />
             </div>
-            <div class="md:col-span-3">
-                <div class="box">
-                    Video
-                </div>
+            <div class="md:col-span-3 video-custom">
+                <!-- <iframe  src="https://www.youtube.com/embed/TrsAaX1u4HU?controls=0"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe> -->
+                <iframe src="https://www.youtube.com/embed/9W44NWYwa1g?controls=0" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </div>
-            <div class="md:col-span-3">
-                <div class="box">
-                    Imagen
-                </div>
+            <div class="md:col-span-3 flex">
+                <img class="h-full md:h-[182px] object-cover object-center rounded-md shadow-lg"
+                    src="https://cdn.marvel.com/content/1x/ssd1160_trl_comp_v003.1021.jpg" alt="Imagen de marvel">
             </div>
         </div>
+
+        <div class="page-characters--list">
+            <div class="grid gap-4 md:grid-cols-5">
+                <CardCharacter v-for="i in 5" :key="i"/>
+            </div>
+        </div>
+
     </div>
 </template>
 
 <style lang="scss" scoped>
 .page-characters {
-    &--details{
-        @apply grid gap-4 md:grid-cols-10;
+    @apply grid gap-4;
+    &--info {
+        @apply grid gap-4 md:grid-cols-11;
     }
 }
-</style>
+
+
+.video-custom {
+    @apply rounded-md shadow-lg;
+    @apply relative overflow-hidden w-full;
+    padding-top: 56.60%;
+
+    iframe {
+        @apply absolute top-0 left-0 bottom-0 right-0 w-full h-full md:h-[182px];
+    }
+}</style>

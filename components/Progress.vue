@@ -47,10 +47,10 @@ const valueBar = computed(() => {
 
 <style lang="scss" scoped>
 .progress-marvel {
-    @apply grid gap-4;
+    @apply flex flex-col justify-center gap-4 shadow-lg;
 
     &--bar {
-        @apply h-auto w-full border-2 border-primary-300 rounded-sm p-1 relative;
+        @apply h-8 w-full border-2 border-primary-300 rounded-sm p-1 relative;
     }
     
     &--bar-rods {
