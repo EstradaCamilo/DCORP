@@ -1,10 +1,10 @@
 <template>
-    <div class="progress-marvel">
+    <div class="progress-marvel box">
         <p class="text-center text-golden-100">
             PROGRESO DE PELICULAS PRODUCIDAS
         </p>
-        <div class="grid gap-4">
-            <p class="text-right text-golden-300 text-sm leading-[12px]">
+        <div class="grid gap-1">
+            <p class="text-right text-golden-300 text-xs leading-[12px]">
                 <span>{{ props.total }} Películas</span>
                 <br>
                 <span>Meta de producción</span>
@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </div>
-            <p class="text-right text-darkblue text-sm leading-[12px]" :style="`padding-right: ${100 - valueBar}%`">
+            <p class="text-right text-darkblue text-xs leading-[12px]" :style="`padding-right: ${100 - valueBar}%`">
                 <span>{{ props.current }} Películas</span>
                 <br>
                 <span>Producidas</span>
@@ -47,10 +47,10 @@ const valueBar = computed(() => {
 
 <style lang="scss" scoped>
 .progress-marvel {
-    @apply bg-grey py-6 px-6 border border-golden-600 border-opacity-30 rounded-md grid gap-4;
+    @apply grid gap-4;
 
     &--bar {
-        @apply h-auto w-full border-2 border-golden-300 p-1 relative;
+        @apply h-auto w-full border-2 border-golden-300 rounded-sm p-1 relative;
     }
     
     &--bar-rods {

@@ -4,7 +4,16 @@
             <div class="md:col-span-4">
                 <Progress :total="688" :current="400" />
             </div>
-            <!-- <div class="bg-golden-400 md:col-span-3">x</div> -->
+            <div class="md:col-span-3">
+                <div class="box">
+                    Video
+                </div>
+            </div>
+            <div class="md:col-span-3">
+                <div class="box">
+                    Imagen
+                </div>
+            </div>
         </div>
     </div>
 </template>

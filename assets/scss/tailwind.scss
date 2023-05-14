@@ -35,6 +35,9 @@
 @tailwind components;
 
 @layer components{
+  .box{
+    @apply bg-grey p-4 border border-golden-600 border-opacity-30 rounded-md h-fit;
+  }
   .inclination {
     -webkit-transform: skew(-12deg, 0deg);
     -moz-transform: skew(-12deg, 0deg);
