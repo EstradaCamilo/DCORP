@@ -18,6 +18,7 @@ export const theme = {
         500: '#463714',
         600: '#32281E',
       },
+      darkblue:'#1DA5B4',
       grey:'#111111'
       // grey: colors.zinc
     },
