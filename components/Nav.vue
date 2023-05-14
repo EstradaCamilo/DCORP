@@ -1,9 +1,8 @@
 <template>
     <nav class="nav-marvel">
-        <p class="text-primary-100 text-2xl hidden md:block">
-            LOGO MARVEL
-        </p>
-        <ul>
+        <Logo class="hidden md:block"/>
+        <Isotipo class="block md:hidden h-full w-auto"/>
+        <ul class="ml-4 mr-4">
             <li>
                 <NuxtLink to="/">Inicio</NuxtLink>
             </li>
@@ -11,12 +10,11 @@
                 <NuxtLink to="/characters">Personajes</NuxtLink>
             </li>
         </ul>
-
     </nav>
 </template>
 <style lang="scss" scoped>
 .nav-marvel {
-    @apply inline-flex space-x-4 items-center h-full;
+    @apply inline-flex items-center h-full;
 
     >ul {
         @apply h-full inline-flex;

@@ -1,6 +1,30 @@
 <template>
     <div class="card-character">
         <div class="card-character--bg"></div>
+        <div class="card-character--content">
+            <div class="inline-flex justify-between items-center">
+                <img class="h-7 w-7" src="~/assets/images/border-l.svg">
+                <span class="px-2 text-sm text-center text-primary-100">
+                    PERSONAJE NAME
+                </span>
+                <img class="h-7 w-7" src="~/assets/images/border-r.svg">
+            </div>
+            <div class="flex flex-col space-y-1 items-center">
+                <img class="h-4 w-5" src="~/assets/images/diamond.png">
+                <div class="h-24 w-24 rounded-full bg-primary-100"></div>
+                <img class="h-4 w-5" src="~/assets/images/diamond.png">
+            </div>
+            <div class="card-character--details">
+                <div class="card-character--detail">
+                    <span>Comics:</span>
+                    <span class="text-xl">25</span>
+                </div>
+                <div class="card-character--detail">
+                    <span>Películas:</span>
+                    <span class="text-xl">25</span>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -10,13 +34,26 @@ const props = defineProps({})
 
 <style lang="scss" scoped>
 .card-character {
-    @apply relative rounded-md bg-cover min-h-[370px] border border-primary-600 border-opacity-50 shadow-lg;
+    @apply relative rounded-md min-h-[370px] border border-grey-300 border-opacity-50 ;
+    @apply p-6 grid gap-4;
 
     &--bg {
-        @apply absolute top-0 left-0 z-30 h-full w-full;
+        @apply absolute top-0 left-0 z-10 h-full w-full rounded-md bg-cover;
         background-image: url('~/assets/images/bg-card-character.png');
         mix-blend-mode: normal;
         opacity: 1;
+    }
+
+    &--content {
+        @apply flex flex-col justify-between z-20;
+    }
+
+    &--details {
+        @apply grid gap-4;
+    }
+
+    &--detail {
+        @apply h-10 text-primary-100 bg-grey-400 inline-flex items-center justify-between border border-grey-300 border-opacity-50 py-2 px-3 rounded-md;
     }
 
     &::after {

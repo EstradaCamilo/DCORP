@@ -18,6 +18,14 @@ export const theme = {
         500: '#463714',
         600: '#32281E',
       },
+      'grey': {
+        100: '',
+        200: '#5B5A56',
+        300: '#3C3C41',
+        400: '#1E2328',
+        500: '#5B5A56',
+        600: '#0E0F0F',
+      },
       // 'primary': {
       //   100: '#F0E6D2',
       //   200: '#C8AA6E',
@@ -27,7 +35,6 @@ export const theme = {
       //   600: '#32281E',
       // },
       darkblue:'#1DA5B4',
-      grey:'#111111'
       // grey: colors.zinc
     },
     fontFamily: {

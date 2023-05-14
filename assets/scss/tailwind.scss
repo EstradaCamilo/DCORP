@@ -1,6 +1,10 @@
 @tailwind base;
 
 @layer base {
+  * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
   @font-face {
     font-family: 'Beaufort for LOL Font';
     src: url('~/assets/fonts/BeaufortforLOL-Regular.ttf') format('truetype');
@@ -36,7 +40,7 @@
 
 @layer components{
   .box{
-    @apply bg-grey p-4 border border-primary-600 border-opacity-30 rounded-md h-fit;
+    @apply bg-grey-600 p-4 border border-primary-600 border-opacity-30 rounded-md h-fit;
   }
   .inclination {
     -webkit-transform: skew(-12deg, 0deg);

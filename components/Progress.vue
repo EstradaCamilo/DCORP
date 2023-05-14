@@ -9,10 +9,9 @@
                 <br>
                 <span>Meta de producción</span>
             </p>
-
             <div class="progress-marvel--bar inclination">
                 <div class="progress-marvel--bar-rods inclination-2">
-                    <span v-for="i in 10" :key="i" class="border-r border-grey" :class="{'border-none':i==0 || i==10}"></span>
+                    <span v-for="i in 10" :key="i" class="border-r border-grey-600" :class="{'border-none':i==0 || i==10}"></span>
                 </div>
                 <div class="bg-gray-200 inclination-2">
                     <div class="progress-marvel--bar-value" :style="`width: ${valueBar}%`">

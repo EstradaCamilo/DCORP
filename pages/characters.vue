@@ -2,7 +2,7 @@
     <div class="page-characters">
         <div class="page-characters--info">
             <div class="md:col-span-5 h-[182px]">
-                <Progress class="h-full" :total="688" :current="400" />
+                <Progress class="h-full" :total="865" :current="550" />
             </div>
             <div class="md:col-span-3 video-custom">
                 <!-- <iframe  src="https://www.youtube.com/embed/TrsAaX1u4HU?controls=0"
