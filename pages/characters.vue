@@ -29,6 +29,12 @@
     </div>
 </template>
 
+<script setup>
+import { useCharactersStore } from '~/stores/characters';
+const charactersStore = useCharactersStore()
+charactersStore.getCharacters()
+</script>
+
 <style lang="scss" scoped>
 .page-characters {
     @apply grid gap-4;

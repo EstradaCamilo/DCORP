@@ -1,5 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  modules: [
+    // ...
+    '@pinia/nuxt',
+  ],
   css: [
     "~/assets/scss/tailwind.scss",
     "~/public/main.css", // Regular
@@ -23,7 +27,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       apiBaseUrl: process.env.API_BASE_URL ?? "",
-      apiBase: process.env.API_KEY ?? "",
+      apiKeyPublic: process.env.API_KEY_PUBLIC ?? "",
+      apiKeyPrivate: process.env.API_KEY_PRIVATE ?? "",
     },
   },
 });
