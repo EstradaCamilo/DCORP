@@ -14,7 +14,7 @@
     background-image: url('~/assets/images/bg.png');
     
     &--content{
-     @apply grid z-10 mx-auto  max-w-7xl px-4 sm:px-6 lg:px-8;
+     @apply grid z-10 mx-auto  max-w-7xl px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-8;
     }
     &::after {
         @apply absolute top-0 left-0 h-full w-full mix-blend-multiply content-[''];

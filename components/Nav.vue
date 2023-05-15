@@ -4,10 +4,10 @@
         <Isotipo class="block md:hidden h-full w-auto"/>
         <ul class="ml-4 mr-4">
             <li>
-                <NuxtLink to="/">Inicio</NuxtLink>
+                <NuxtLink to="/" aria-label="Inicio">Inicio</NuxtLink>
             </li>
             <li>
-                <NuxtLink to="/characters">Personajes</NuxtLink>
+                <NuxtLink to="/characters" aria-label="Personajes">Personajes</NuxtLink>
             </li>
         </ul>
     </nav>

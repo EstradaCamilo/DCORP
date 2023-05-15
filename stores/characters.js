@@ -16,6 +16,9 @@ export const useCharactersStore = defineStore("characters", {
   },
   actions: {
     setCharactersAndPagination(payload) {
+
+      let pages = Math.ceil(payload.total / payload.limit);
+      
       this.characters = payload.results;
       this.offset = payload.offset;
       this.limit = payload.limit;

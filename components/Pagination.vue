@@ -1,6 +1,6 @@
 <template>
     <div class="pagination-marvel">
-        <button class="pagination-marvel--button" @click="charactersStore.handlerBack()"
+        <button class="pagination-marvel--button" @click="charactersStore.handlerBack()" aria-label="Atrás"
             :disabled="charactersStore.disabledBack">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left h-6 w-6 text-grey-600"
                 width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -12,7 +12,7 @@
         <span class="text-primary-300">
             {{ charactersStore.offset + 1 }}/{{ charactersStore.pages - 1 }}
         </span>
-        <button class="pagination-marvel--button" @click="charactersStore.handlerNext()"
+        <button class="pagination-marvel--button" @click="charactersStore.handlerNext()" aria-label="Siguiente"
             :disabled="charactersStore.disabledNext">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right h-6 w-6 text-grey-600"
                 width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"

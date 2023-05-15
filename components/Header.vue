@@ -3,7 +3,7 @@
         <div class="header-marvel--content">
             <Nav />
             <div class="inline-flex items-center space-x-2">
-                <button type="button">
+                <button type="button" aria-label="Notificaciones">
                     <svg xmlns="http://www.w3.org/2000/svg"
                         class="icon icon-tabler icon-tabler-bell-filled  h-6 w-6 text-primary-100 hover:text-primary-300"
                         width="40" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none"
@@ -17,8 +17,7 @@
                             stroke-width="0" fill="currentColor"></path>
                     </svg>
                 </button>
-                <button type="button">
-
+                <button type="button" aria-label="Configuración">
                     <svg xmlns="http://www.w3.org/2000/svg"
                         class="icon icon-tabler icon-tabler-settings-filled  h-6 w-6 text-primary-100 hover:text-primary-300"
                         width="40" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none"
