@@ -40,6 +40,9 @@ export const theme = {
     fontFamily: {
       sans: ['Beaufort for LOL Font', 'sans-serif'],
     },
+    animation: {
+      'spin-slow': 'spin 15s linear infinite',
+    },
   }
 }
 export const plugins = [require('@tailwindcss/forms')]
