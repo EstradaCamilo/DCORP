@@ -9,13 +9,14 @@ export const useCharactersStore = defineStore("characters", {
     offset: 0,
     limit: 5,
     total: 0,
+    currentPage: 0,
     pages: 0,
     loading: false,
 
   }),
   getters: {
-    disabledBack: (state) => state.offset == 0 || state.loading,
-    disabledNext: (state) => state.offset == state.pages || state.loading,
+    disabledBack: (state) => state.currentPage == 0 || state.loading,
+    disabledNext: (state) => state.currentPage == state.pages || state.loading,
     isSelectedCharacter: (state) => Object.keys(state.currentCharacters).length !== 0
   },
   actions: {
@@ -39,7 +40,7 @@ export const useCharactersStore = defineStore("characters", {
     async getCharacters() {
       try {
         this.setLoading(true)
-        const response = await fetchWrapper.get(`/characters?offset=${this.offset}&limit=${this.limit}`);
+        const response = await fetchWrapper.get(`/characters?offset=${this.limit*this.currentPage}&limit=${this.limit}`);
         this.setCharactersAndPagination(response.data)
         this.setLoading(false)
       } catch (error) {
@@ -47,14 +48,14 @@ export const useCharactersStore = defineStore("characters", {
       }
     },
     async handlerBack() {
-      if (this.offset != 0) {
-        this.offset--
+      if (this.currentPage != 0) {
+        this.currentPage--
         await this.getCharacters()
       }
     },
     async handlerNext() {
-      if (this.offset < this.pages) {
-        this.offset++
+      if (this.currentPage < this.pages) {
+        this.currentPage++
         await this.getCharacters()
       }
     },

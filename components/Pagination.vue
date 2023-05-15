@@ -10,7 +10,7 @@
             </svg>
         </button>
         <span class="text-primary-300">
-            {{ charactersStore.offset + 1 }}/{{ charactersStore.pages - 1 }}
+            {{ charactersStore.currentPage + 1 }}/{{ charactersStore.pages - 1 }}
         </span>
         <button class="pagination-marvel--button" @click="() => charactersStore.handlerNext()" aria-label="Siguiente"
             :disabled="charactersStore.disabledNext">
