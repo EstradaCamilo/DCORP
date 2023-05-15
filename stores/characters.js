@@ -18,7 +18,7 @@ export const useCharactersStore = defineStore("characters", {
     setCharactersAndPagination(payload) {
 
       let pages = Math.ceil(payload.total / payload.limit);
-      
+
       this.characters = payload.results;
       this.offset = payload.offset;
       this.limit = payload.limit;
@@ -38,11 +38,17 @@ export const useCharactersStore = defineStore("characters", {
         console.error(error);
       }
     },
-    handlerBack() {
-      if (this.offset != 0) this.offset--
+    async handlerBack() {
+      if (this.offset != 0) {
+        this.offset--
+        await this.getCharacters()
+      }
     },
-    handlerNext() {
-      if (this.offset < this.pages) this.offset++
+    async handlerNext() {
+      if (this.offset < this.pages) {
+        this.offset++
+        await this.getCharacters()
+      }
     }
   },
 });

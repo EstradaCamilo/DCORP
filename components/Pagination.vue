@@ -27,12 +27,6 @@
 <script setup>
 import { useCharactersStore } from '~/stores/characters';
 const charactersStore = useCharactersStore()
-charactersStore.$subscribe(async (mutation) => {
-    if (mutation.events.key == "offset") {
-        await charactersStore.getCharacters()
-        console.log('asdasedsa')
-    }
-})
 </script>
 
 
