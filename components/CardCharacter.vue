@@ -1,27 +1,29 @@
 <template>
-    <div class="card-character">
-        <div class="card-character--bg"></div>
-        <div class="card-character--content">
+    <div class="card-character-marvel">
+        <div class="card-character-marvel--bg"></div>
+        <div class="card-character-marvel--content">
             <div class="inline-flex justify-between items-center">
                 <img class="h-7 w-7" src="~/assets/images/border-l.svg">
                 <span class="px-2 text-sm text-center text-primary-100">
-                    PERSONAJE NAME
+                    {{ character.name }}
                 </span>
                 <img class="h-7 w-7" src="~/assets/images/border-r.svg">
             </div>
             <div class="flex flex-col space-y-1 items-center">
                 <img class="h-4 w-5" src="~/assets/images/diamond.png">
-                <div class="h-24 w-24 rounded-full bg-primary-100"></div>
+                <div class="h-24 w-24 rounded-full bg-primary-100 flex">
+                    <img :src="`${character.thumbnail.path}.${character.thumbnail.extension}`" class="h-full w-full rounded-full" :alt="character.name">
+                </div>
                 <img class="h-4 w-5" src="~/assets/images/diamond.png">
             </div>
-            <div class="card-character--details">
-                <div class="card-character--detail">
+            <div class="card-character-marvel--details">
+                <div class="card-character-marvel--detail">
                     <span>Comics:</span>
-                    <span class="text-xl">25</span>
+                    <span class="text-xl"> {{ character.comics.available }}</span>
                 </div>
-                <div class="card-character--detail">
+                <div class="card-character-marvel--detail">
                     <span>Películas:</span>
-                    <span class="text-xl">25</span>
+                    <span class="text-xl">{{ character.series.available }}</span>
                 </div>
             </div>
         </div>
@@ -29,12 +31,17 @@
 </template>
 
 <script setup>
-const props = defineProps({})
+const props = defineProps({
+    character: {
+        type: Object,
+        required: true
+    }
+})
 </script>
 
 <style lang="scss" scoped>
-.card-character {
-    @apply relative rounded-md min-h-[370px] border border-grey-300 border-opacity-50 ;
+.card-character-marvel {
+    @apply relative rounded-md min-h-[370px] border border-grey-300 border-opacity-50;
     @apply p-6 grid gap-4;
 
     &--bg {

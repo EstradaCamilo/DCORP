@@ -3,20 +3,44 @@ import { fetchWrapper } from "~/helpers/fetch-wrapper";
 
 export const useCharactersStore = defineStore("characters", {
   state: () => ({
-    characters: {},
+    characters: [],
+    offset: 0,
+    limit: 5,
+    total: 0,
+    pages: 0,
+    loading: false,
   }),
+  getters: {
+    disabledBack: (state) => state.offset == 0 || state.loading,
+    disabledNext: (state) => state.offset == state.pages || state.loading,
+  },
   actions: {
-    setCharacters(payload) {
-      this.characters = payload
+    setCharactersAndPagination(payload) {
+      this.characters = payload.results;
+      this.offset = payload.offset;
+      this.limit = payload.limit;
+      this.total = payload.total;
+      this.pages = Math.ceil(payload.total / payload.limit);
+    },
+    setLoading(payload) {
+      this.loading = payload
     },
     async getCharacters() {
       try {
-        const response = await fetchWrapper.get('/characters');
-        console.log(response);
-
+        this.setLoading(true)
+        const response = await fetchWrapper.get(`/characters?offset=${this.offset}&limit=${this.limit}`);
+        this.setCharactersAndPagination(response.data)
+        this.setLoading(false)
       } catch (error) {
         console.error(error);
       }
     },
-  }
+    handlerBack() {
+      if (this.offset != 0) this.offset--
+    },
+    handlerNext() {
+      if (this.offset < this.pages) this.offset++
+    }
+  },
 });
+
