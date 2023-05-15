@@ -4,7 +4,7 @@ import { fetchWrapper } from "~/helpers/fetch-wrapper";
 export const useCharactersStore = defineStore("characters", {
   state: () => ({
     characters: [],
-    currentCharacters: {},
+    currentCharacter: {},
     isOpenDetailsCharacter: false,
     offset: 0,
     limit: 5,
@@ -17,7 +17,7 @@ export const useCharactersStore = defineStore("characters", {
   getters: {
     disabledBack: (state) => state.currentPage == 0 || state.loading,
     disabledNext: (state) => state.currentPage == state.pages || state.loading,
-    isSelectedCharacter: (state) => Object.keys(state.currentCharacters).length !== 0
+    isSelectedCharacter: (state) => Object.keys(state.currentCharacter).length !== 0
   },
   actions: {
     setCharactersAndPagination(payload) {
@@ -29,7 +29,7 @@ export const useCharactersStore = defineStore("characters", {
       this.pages = Math.ceil(payload.total / payload.limit);
     },
     setCurrentCharacter(payload) {
-      this.currentCharacters = payload
+      this.currentCharacter = payload
     },
     setIsOpenDetailsCharacter(payload) {
       this.isOpenDetailsCharacter = payload

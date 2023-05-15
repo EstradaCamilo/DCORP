@@ -7,6 +7,6 @@
 useHead({
     htmlAttrs: {
         lang: 'es'
-    },
+    }
 })
 </script>

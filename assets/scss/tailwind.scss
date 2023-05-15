@@ -5,6 +5,17 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
+  @media (min-width: 1280px) {
+    *::-webkit-scrollbar {
+      @apply bg-transparent h-[0.35rem] w-[0.25rem];
+      padding: 2px !important;
+    }
+
+    *::-webkit-scrollbar-thumb {
+      @apply bg-primary-200 bg-opacity-30 rounded-md;
+    }
+  }
+
   @font-face {
     font-family: 'Beaufort for LOL Font';
     src: url('~/assets/fonts/BeaufortforLOL-Regular.ttf') format('truetype');

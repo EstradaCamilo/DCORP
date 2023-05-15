@@ -18,8 +18,8 @@
 
         <div class="page-characters--list">
             <!-- {{ charactersStore.isSelectedCharacter }}
-            {{ charactersStore.currentCharacters }} -->
-            <DetailsCharacter />
+            {{ charactersStore.currentCharacter }} -->
+            <ModalCharacter />
             <div class="page-characters--list-items">
                 <CardCharacter v-for="character in charactersStore.characters" :key="character.id" :character="character"
                     @click="charactersStore.selectCharacterAndShowDetails(character)" />

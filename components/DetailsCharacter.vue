@@ -1,78 +1,49 @@
 <template>
-    <TransitionRoot appear :show="charactersStore.isOpenDetailsCharacter" as="template">
-        <Dialog as="div" @close="charactersStore.setIsOpenDetailsCharacter(false)" class="relative z-10">
-            <TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0" enter-to="opacity-100"
-                leave="duration-200 ease-in" leave-from="opacity-100" leave-to="opacity-0">
-                <div class="fixed inset-0 bg-black bg-opacity-50" />
-            </TransitionChild>
-
-            <div class="fixed inset-0 overflow-y-auto">
-                <div class="flex min-h-full items-center justify-center p-4 text-center">
-                    <TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0 scale-95"
-                        enter-to="opacity-100 scale-100" leave="duration-200 ease-in" leave-from="opacity-100 scale-100"
-                        leave-to="opacity-0 scale-95">
-                        <DialogPanel class="details-character-marvel">
-                            <div class="details-character-marvel--bg"></div>
-                            <div class="details-character-marvel--content">
-                                <div class="inline-flex justify-between items-center">
-                                    <img class="h-7 w-7" src="~/assets/images/border-l.svg" alt="border left">
-                                    <span class="px-2 text-sm text-center text-primary-100">
-                                        {{ charactersStore.currentCharacters.name ?? 'Nombre' }}
-                                    </span>
-                                    <img class="h-7 w-7" src="~/assets/images/border-r.svg" alt="border right">
-                                </div>
-                                <p class="text-xs font-light text-primary-100">
-                                    {{ charactersStore.currentCharacters.description ?? 'Descripción' }}
-                                </p>
-                            </div>
-                            <!-- <button type="button"
-                                class="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                                @click="charactersStore.setIsOpenDetailsCharacter(false)">
-                                Close
-                            </button> -->
-                        </DialogPanel>
-                    </TransitionChild>
-                </div>
-            </div>
-        </Dialog>
-    </TransitionRoot>
+    <div class="details-character-marvel">
+        <!-- <Disclosure v-slot="{ open }">
+            <DisclosureButton as="button"
+                class="inline-flex w-full justify-between rounded-md px-4 py-2 text-left text-sm font-medium text-primary-100 hover:text-primary-300 focus:outline-none "
+                :class="open ? 'text-primary-300' : 'text-primary-100'">
+                <span>
+                    Comics
+                    ({{ charactersStore.currentCharacter.comics.available }})
+                </span>
+                <svg :classs="{ 'rotate-180 transform': open }" xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-chevron-down h-5 w-5" width="40" height="40" viewBox="0 0 24 24"
+                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M6 9l6 6l6 -6"></path>
+                </svg>
+            </DisclosureButton>
+            <DisclosurePanel as="ul" class="text-xs text-primary-100 px-4 py-2">
+                <li v-for="comic, c in charactersStore.currentCharacter.comics.items" :key="c">
+                    {{ comic.name }}
+                </li>
+            </DisclosurePanel>
+        </Disclosure> -->
+        <DetailCharacter title="Comics" v-if="charactersStore.currentCharacter.comics.available != 0"
+            :count="charactersStore.currentCharacter.comics.available"
+            :items="charactersStore.currentCharacter.comics.items" />
+        <DetailCharacter title="Series" v-if="charactersStore.currentCharacter.series.available != 0"
+            :count="charactersStore.currentCharacter.series.available"
+            :items="charactersStore.currentCharacter.series.items" />
+        <DetailCharacter title="Historias" v-if="charactersStore.currentCharacter.stories.available != 0"
+            :count="charactersStore.currentCharacter.stories.available"
+            :items="charactersStore.currentCharacter.stories.items" />
+        <DetailCharacter title="Eventos" v-if="charactersStore.currentCharacter.events.available != 0"
+            :count="charactersStore.currentCharacter.events.available"
+            :items="charactersStore.currentCharacter.events.items" />
+    </div>
 </template>
-  
+
 <script setup>
 import { useCharactersStore } from '~/stores/characters';
-import {
-    TransitionRoot,
-    TransitionChild,
-    Dialog,
-    DialogPanel,
-    DialogTitle,
-} from '@headlessui/vue'
 const charactersStore = useCharactersStore()
 </script>
 
-<style lang="scss" scope>
+<style lang="scss" scoped>
 .details-character-marvel {
-    @apply w-full max-w-md transform overflow-hidden rounded-md p-6 text-left align-middle shadow-xl transition-all;
-    @apply relative border border-grey-500 border-opacity-40;
+    @apply w-full max-h-80 overflow-y-auto;
 
-    &--bg {
-        @apply absolute top-0 left-0 z-10 h-full w-full rounded-md bg-cover;
-        background-image: url('~/assets/images/bg-card-character.png');
-        mix-blend-mode: normal;
-        opacity: 1;
-    }
-
-    &--content {
-        @apply relative flex flex-col gap-2 justify-between z-30;
-    }
-
-    &::after {
-        @apply absolute top-0 left-0 h-full w-full mix-blend-multiply content-[''] rounded-md;
-        background: linear-gradient(360deg, #090C14 0%, #171A20 36.49%, #272C34 114.84%);
-    }
-
-    &::before {
-        @apply absolute top-0 left-0 h-full w-full mix-blend-multiply content-[''] rounded-md;
-        background: linear-gradient(360deg, #000000 0%, #090C14 0.01%, rgba(23, 26, 32, 0) 36.49%, rgba(39, 44, 52, 0) 114.84%);
-    }
-}</style>
+}
+</style>
