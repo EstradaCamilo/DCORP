@@ -3,18 +3,18 @@
         <div class="card-character-marvel--bg"></div>
         <div class="card-character-marvel--content">
             <div class="inline-flex justify-between items-center">
-                <img class="h-7 w-7" src="~/assets/images/border-l.svg">
+                <img class="h-7 w-7" src="~/assets/images/border-l.svg" alt="border left">
                 <span class="px-2 text-sm text-center text-primary-100">
                     {{ character.name }}
                 </span>
-                <img class="h-7 w-7" src="~/assets/images/border-r.svg">
+                <img class="h-7 w-7" src="~/assets/images/border-r.svg" alt="border right">
             </div>
             <div class="flex flex-col space-y-1 items-center">
-                <img class="h-4 w-5" src="~/assets/images/diamond.png">
+                <img class="h-4 w-5" src="~/assets/images/diamond.png" alt="diamond">
                 <div class="h-24 w-24 rounded-full bg-primary-100 flex">
-                    <img :src="`${character.thumbnail.path}.${character.thumbnail.extension}`" class="h-full w-full rounded-full" :alt="character.name">
+                    <img :src="`${character.thumbnail.path}.${character.thumbnail.extension}`" class="h-full w-full rounded-full object-cover" :alt="character.name">
                 </div>
-                <img class="h-4 w-5" src="~/assets/images/diamond.png">
+                <img class="h-4 w-5" src="~/assets/images/diamond.png" alt="diamond">
             </div>
             <div class="card-character-marvel--details">
                 <div class="card-character-marvel--detail">
