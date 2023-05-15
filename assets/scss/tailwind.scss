@@ -3,7 +3,7 @@
 @layer base {
   * {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+  }
 
   @font-face {
     font-family: 'Beaufort for LOL Font';
@@ -34,14 +34,13 @@
   }
 }
 
-// background: linear-gradient(180deg, #31969D 0%, #65E6F4 31.77%, #24AEBD 66.15%, #1299A8 98.96%);
-
 @tailwind components;
 
-@layer components{
-  .box{
+@layer components {
+  .box {
     @apply bg-grey-600 p-4 border border-primary-600 border-opacity-30 rounded-md h-fit;
   }
+
   .inclination {
     -webkit-transform: skew(-12deg, 0deg);
     -moz-transform: skew(-12deg, 0deg);
@@ -49,6 +48,7 @@
     -o-transform: skew(-12deg, 0deg);
     transform: skew(-12deg, 0deg);
   }
+
   .inclination-2 {
     -webkit-transform: skew(-2deg, 0deg);
     -moz-transform: skew(-2deg, 0deg);

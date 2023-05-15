@@ -1,8 +1,40 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      link: [
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: "/favicon.svg",
+        },
+      ],
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Prueba frontend",
+        },
+        {
+          hid: "image",
+          name: "image",
+          content: `${
+            process.env.APP_BASE_URL || "http://localhost:3011"
+          }image.png`,
+        },
+        {
+          hid: "og:image",
+          name: "og:image",
+          content: `${
+            process.env.APP_BASE_URL || "http://localhost:3011"
+          }ogImage.png`,
+        },
+      ],
+    },
+  },
   modules: [
     // ...
-    '@pinia/nuxt',
+    "@pinia/nuxt",
   ],
   css: [
     "~/assets/scss/tailwind.scss",
