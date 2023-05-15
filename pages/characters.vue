@@ -42,6 +42,8 @@ definePageMeta({
 
 const charactersStore = useCharactersStore();
 
+await charactersStore.getCharacters();
+
 onServerPrefetch(async () => {
     await charactersStore.getCharacters();
 })
