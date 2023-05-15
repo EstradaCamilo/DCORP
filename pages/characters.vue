@@ -17,8 +17,11 @@
         </div>
 
         <div class="page-characters--list">
+
+            <!-- {{ charactersStore.isSelectedCharacter }}
+            {{ charactersStore.currentCharacters }} -->
             <div class="grid gap-4 md:grid-cols-5">
-                <CardCharacter v-for="character in charactersStore.characters" :key="character.id" :character="character" />
+                <CardCharacter v-for="character in charactersStore.characters" :key="character.id" :character="character" @click="charactersStore.selectCharacterAndShowDetails(character)" />
             </div>
             <Pagination v-if="charactersStore.characters.length != 0" />
         </div>
