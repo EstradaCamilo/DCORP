@@ -9,12 +9,16 @@
                 </span>
                 <img class="h-7 w-7" src="~/assets/images/border-r.svg" alt="border right">
             </div>
-            <div class="flex flex-col space-y-1 items-center">
-                <img class="h-[20.2px] w-[13.86px]" src="~/assets/images/diamond.png" alt="diamond">
-                <div class="h-24 w-24 rounded-full bg-primary-100 flex">
-                    <img :src="`${character.thumbnail.path.replace('http','https')}.${character.thumbnail.extension}`" class="h-full w-full rounded-full object-cover" :alt="character.name">
-                </div>
-                <img class="h-[20.2px] w-[13.86px]" src="~/assets/images/diamond.png" alt="diamond">
+            <div class="h-40 w-40 mx-auto flex flex-col items-center relative">
+                <img class="h-full w-full absolute top-0 bottom-0 left-0 right-0 m-auto" src="~/assets/images/circle.svg"
+                    alt="circle">
+                <img :src="`${character.thumbnail.path.replace('http', 'https')}.${character.thumbnail.extension}`"
+                    class="h-32 w-32 rounded-full object-cover absolute top-0 bottom-0 left-0 right-0 m-auto"
+                    :alt="character.name">
+                <img class="h-[20.2px] w-[13.86px] absolute top-0 bottom-0 left-0 right-0 m-auto"
+                    src="~/assets/images/diamond.png" alt="diamond">
+                <img class="h-[20.2px] w-[13.86px] absolute -bottom-3" src="~/assets/images/diamond.png" alt="diamond">
+                <img class="h-[20.2px] w-[13.86px] absolute -top-3" src="~/assets/images/diamond.png" alt="diamond">
             </div>
             <div class="card-character-marvel--details">
                 <div class="card-character-marvel--detail">
@@ -72,5 +76,4 @@ const props = defineProps({
         @apply absolute top-0 left-0 h-full w-full mix-blend-multiply content-[''] rounded-md;
         background: linear-gradient(360deg, #000000 0%, #090C14 0.01%, rgba(23, 26, 32, 0) 36.49%, rgba(39, 44, 52, 0) 114.84%);
     }
-}
-</style>
+}</style>
