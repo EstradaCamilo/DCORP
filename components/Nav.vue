@@ -1,7 +1,7 @@
 <template>
     <nav class="nav-marvel">
         <Logo class="hidden md:block"/>
-        <Isotipo class="block md:hidden h-full w-auto"/>
+        <Isotipo class="block md:hidden h-10 w-auto"/>
         <ul class="ml-4 mr-4">
             <li>
                 <NuxtLink to="/" aria-label="Inicio">Inicio</NuxtLink>
