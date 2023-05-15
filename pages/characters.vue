@@ -5,7 +5,7 @@
                 <Progress class="h-full" :total="865" :current="550" />
             </div>
             <div class="md:col-span-3 video-custom">
-                 <!-- <iframe src="https://www.youtube.com/embed/9W44NWYwa1g?controls=0" title="YouTube video player"
+                <!-- <iframe src="https://www.youtube.com/embed/9W44NWYwa1g?controls=0" title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>  -->
@@ -19,9 +19,10 @@
         <div class="page-characters--list">
             <!-- {{ charactersStore.isSelectedCharacter }}
             {{ charactersStore.currentCharacters }} -->
-            <DetailsCharacter/>
-            <div class="grid gap-4 md:grid-cols-5">
-                <CardCharacter v-for="character in charactersStore.characters" :key="character.id" :character="character" @click="charactersStore.selectCharacterAndShowDetails(character)" />
+            <DetailsCharacter />
+            <div class="page-characters--list-items">
+                <CardCharacter v-for="character in charactersStore.characters" :key="character.id" :character="character"
+                    @click="charactersStore.selectCharacterAndShowDetails(character)" />
             </div>
             <Pagination v-if="charactersStore.characters.length != 0" />
         </div>
@@ -32,11 +33,11 @@
 <script setup>
 import { useCharactersStore } from '~/stores/characters';
 useHead({
-    title:"Personajes",
+    title: "Personajes",
 });
 definePageMeta({
-    title:"Personajes",
-    name:"Personajes",
+    title: "Personajes",
+    name: "Personajes",
 });
 
 const charactersStore = useCharactersStore();
@@ -60,13 +61,18 @@ onServerPrefetch(async () => {
     &--list {
         @apply grid gap-4;
     }
+
+    &--list-items {
+        @apply flex md:grid gap-4 md:grid-cols-5;
+        @apply relative overflow-scroll md:overflow-hidden w-full;
+    }
 }
 
 
 .video-custom {
     @apply rounded-md shadow-lg;
     @apply relative overflow-hidden w-full;
-    padding-top:56.60%;
+    padding-top: 56.60%;
 
     iframe {
         @apply absolute top-0 left-0 bottom-0 right-0 w-full h-full md:h-[182px];
