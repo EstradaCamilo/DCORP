@@ -1,4 +1,5 @@
 
+import md5 from 'md5';
 export const fetchWrapper = {
     get: request('GET'),
 };
@@ -8,9 +9,9 @@ function request(method) {
         const requestOptions = {
             method,
             params: {
-                ts:1,
+                ts: 1,
                 apikey: useRuntimeConfig().public.apiKeyPublic,
-                hash: useRuntimeConfig().public.apiKeyPrivate
+                hash: md5(1 + useRuntimeConfig().public.apiKeyPrivate + useRuntimeConfig().public.apiKeyPublic)
             }
         };
         if (body) {

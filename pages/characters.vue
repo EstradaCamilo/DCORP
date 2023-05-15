@@ -34,8 +34,8 @@
 import { useCharactersStore } from '~/stores/characters';
 const charactersStore = useCharactersStore();
 onServerPrefetch(async () => {
+    await charactersStore.getCharacters();
 })
-await charactersStore.getCharacters();
 </script>
 
 <style lang="scss" scoped>
