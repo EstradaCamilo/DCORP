@@ -35,7 +35,6 @@ export default defineNuxtConfig({
   modules: [
     // ...
     "@pinia/nuxt",
-    '@nuxt/image-edge'
   ],
   css: [
     "~/assets/scss/tailwind.scss",
