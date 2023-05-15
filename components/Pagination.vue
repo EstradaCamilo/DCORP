@@ -38,7 +38,7 @@ const charactersStore = useCharactersStore()
         @apply bg-primary-300 rounded-full h-6 w-6 inline-flex items-center;
 
         &:disabled {
-            @apply bg-grey-200;
+            @apply bg-grey-500;
         }
     }
 }
