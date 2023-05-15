@@ -5,14 +5,10 @@
                 <Progress class="h-full" :total="865" :current="550" />
             </div>
             <div class="md:col-span-3 video-custom">
-                <!-- <iframe  src="https://www.youtube.com/embed/TrsAaX1u4HU?controls=0"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe> -->
-                <!-- <iframe src="https://www.youtube.com/embed/9W44NWYwa1g?controls=0" title="YouTube video player"
+                 <iframe src="https://www.youtube.com/embed/9W44NWYwa1g?controls=0" title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe> -->
+                    allowfullscreen></iframe> 
             </div>
             <div class="md:col-span-3 flex">
                 <img class="h-full md:h-[182px] object-cover object-center rounded-md shadow-lg"
