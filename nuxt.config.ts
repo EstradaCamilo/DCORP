@@ -27,7 +27,7 @@ export default defineNuxtConfig({
           name: "og:image",
           content: `${
             process.env.APP_BASE_URL || "http://localhost:3011"
-          }ogImage.png`,
+          }og-image.png`,
         },
       ],
     },
